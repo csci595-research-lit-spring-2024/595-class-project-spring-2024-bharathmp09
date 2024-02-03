@@ -8,24 +8,28 @@ The realm of image classification, a complex perceptual task involving the categ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background}
 \label{sec:into_back}
-The motivation behind this project stems from the imperative to enhance the robustness of MNIST digit classification, a task with applications ranging from digit recognition in postal services to the development of advanced optical character recognition systems. 
+This research project is focused on enhancing the classification accuracy of the MNIST digit dataset, a widely used benchmark in the field of machine learning. The motivation behind this study is to address the importance of improving the robustness of MNIST digit classification, particularly in scenarios with noisy input data.
 
+The project conducts an in-depth comparative analysis between two powerful neural network architectures: the Denoising Autoencoder (DAE) and the Convolutional Neural Network (CNN). Both models are chosen for their distinct capabilities, where the DAE excels in unsupervised learning and feature extraction, and the CNN is specifically tailored for image-based tasks, including classification.
+
+The research delves into the impact of these architectures on classification accuracy and noise resilience, going beyond traditional performance metrics. It explores the interpretability of learned representations and evaluates the models' ability to handle noisy input data. Algorithms such as Denoising Autoencoders and Convolutional Neural Networks are the core components under investigation.
+
+The project's significance lies in its potential to advance image classification techniques, providing nuanced guidance for selecting models in MNIST classification tasks, especially when dealing with noisy input data. The findings are expected to benefit both practitioners and researchers, offering insights that can guide the selection and optimization of models for real-world, noise-affected MNIST classification scenarios.
 % \textbf{Cautions:} Do not say you choose this project because of your interest, or your supervisor proposed/suggested this project, or you were assigned this project as your final year project. This all may be true, but it is not meant to be written here.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Problem statement}
+\section{Research Question}
 \label{sec:intro_prob_art}
-This section describes the investigated problem in detail. You can also have a separate chapter on ``Problem articulation.''  For some projects, you may have a section like ``Research question(s)'' or ``Research Hypothesis'' instead of a section on ``Problem statement.'
+The research question is thoroughly explored in this section.The central research problem revolves around understanding how the DAE and CNN architectures influence MNIST digit classification under varying levels of noise, providing valuable insights into their respective strengths and limitations. The main goal is to identify the aspects that affect accuracy, with a particular emphasis on the effects of noise levels.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aims and objectives}
 \label{sec:intro_aims_obj}
-Describe the ``aims and objectives'' of your project. 
 
-\textbf{Aims:} The aims tell a read what you want/hope to achieve at the end of the project. The  aims define your intent/purpose in general terms.  
 
-\textbf{Objectives:} The objectives are a set of tasks you would perform in order to achieve the defined aims. The objective statements have to be specific and measurable through the results and outcome of the project.
+\textbf{Aims:} This study's main goal is determine how well a CNN—which is optimised for image-related tasks—can classify handwritten digits in the MNIST dataset when compared to a DAE—which is specifically made for denoising and feature extraction. Also, provide insightful information on the advantages and disadvantages of both architectures on real world noisy images.
 
+\textbf{Objectives:} This study's primary goals are to process data, apply varying level of noise on MNIST Dataset, train the denoising encoder and CNN's and hyper-tune parameters to get the best possible predicted accuracy. We shall assess both image classification models' performance at the conclusion.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
