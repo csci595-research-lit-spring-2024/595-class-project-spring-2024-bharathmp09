@@ -1,59 +1,130 @@
 \chapter{Introduction}
 \label{ch:into} % This how you label a chapter and the key (e.g., ch:into) will be used to refer this chapter ``Introduction'' later in the report. 
 % the key ``ch:into'' can be used with command \ref{ch:intor} to refere this Chapter.
-The realm of image classification, a complex perceptual task involving the categorization of objects from images, has witnessed significant advancements over the past decade. Referred to as the process of categorizing objects, image classification relies on the sophisticated analysis of multispectral data, utilizing the underlying multispectral pattern of each pixel as a quantitative basis for classification \cite{lillesand2015remote}. Notably, there has been a remarkable improvement in classification accuracy, reflecting the evolution of image classification models. In recent times, these models are increasingly applied across diverse fields, showcasing their versatility. Applications range from tasks such as handwritten digit recognition \cite{ahlawat2020improved} and  Vehicle detection and classification \cite{tsai2018vehicle}, deep learning approach to pneumonia classification \cite{stephen2019efficient}, and military object detection \cite{janakiramaiah2023military}. The existing models are broadly categorized into unsupervised and supervised modes, reflecting the diverse approaches employed in addressing the intricate challenges of image classification.
+The realm of image classification, a complex perceptual task involving the categorization of 
+objects from images, has witnessed significant advancements over the past decade. Referred to 
+as the process of categorizing objects, image classification relies on the sophisticated 
+analysis of multispectral data, utilizing the underlying multispectral pattern of each pixel as 
+a quantitative basis for classification \citep{lillesand2015remote}. Notably, there has been a 
+remarkable improvement in classification accuracy, reflecting the evolution of image 
+classification models. In recent times, these models are increasingly applied across diverse 
+fields, showcasing their versatility. Applications range from tasks such as handwritten digit 
+recognition \citep{ahlawat2020improved} and  Vehicle detection and classification 
+\citep{tsai2018vehicle}, deep learning approach to pneumonia classification 
+\citep{stephen2019efficient}, and military object detection \citep{janakiramaiah2023military}. 
+The existing models are broadly categorized into unsupervised and supervised modes, reflecting 
+the diverse approaches employed in addressing the intricate challenges of image classification.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background}
 \label{sec:into_back}
-This research project is focused on enhancing the classification accuracy of the MNIST digit dataset, a widely used benchmark in the field of machine learning. The motivation behind this study is to address the importance of improving the robustness of MNIST digit classification, particularly in scenarios with noisy input data.
+This research project is focused on enhancing the classification accuracy of the MNIST digit 
+dataset, a widely used benchmark in the field of machine learning. The motivation behind this 
+study is to address the importance of improving the robustness of MNIST digit classification, 
+particularly in scenarios with noisy input data.
 
-The project conducts an in-depth comparative analysis between two powerful neural network architectures: the Denoising Autoencoder (DAE) and the Convolutional Neural Network (CNN). Both models are chosen for their distinct capabilities, where the DAE excels in unsupervised learning and feature extraction, and the CNN is specifically tailored for image-based tasks, including classification.
+The project conducts an in-depth comparative analysis between two powerful neural network 
+architectures: the Denoising Autoencoder (DAE) and the Convolutional Neural Network (CNN). Both 
+models are chosen for their distinct capabilities, where the DAE excels in unsupervised 
+learning and feature extraction, and the CNN is specifically tailored for image-based tasks, 
+including classification.
 
-The research delves into the impact of these architectures on classification accuracy and noise resilience, going beyond traditional performance metrics. It explores the interpretability of learned representations and evaluates the models' ability to handle noisy input data. Algorithms such as Denoising Autoencoders and Convolutional Neural Networks are the core components under investigation.
+The research delves into the impact of these architectures on classification accuracy and noise 
+resilience, going beyond traditional performance metrics. It explores the interpretability of 
+learned representations and evaluates the models' ability to handle noisy input data. 
+Algorithms such as Denoising Autoencoders and Convolutional Neural Networks are the core 
+components under investigation.
 
-The project's significance lies in its potential to advance image classification techniques, providing nuanced guidance for selecting models in MNIST classification tasks, especially when dealing with noisy input data. The findings are expected to benefit both practitioners and researchers, offering insights that can guide the selection and optimization of models for real-world, noise-affected MNIST classification scenarios.
-% \textbf{Cautions:} Do not say you choose this project because of your interest, or your supervisor proposed/suggested this project, or you were assigned this project as your final year project. This all may be true, but it is not meant to be written here.
+The project's significance lies in its potential to advance image classification techniques, 
+providing nuanced guidance for selecting models in MNIST classification tasks, especially when 
+dealing with noisy input data. The findings are expected to benefit both practitioners and 
+researchers, offering insights that can guide the selection and optimization of models for real-
+world, noise-affected MNIST classification scenarios.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Research Question}
 \label{sec:intro_prob_art}
-The research question is thoroughly explored in this section.The central research problem revolves around understanding how the DAE and CNN architectures influence MNIST digit classification under varying levels of noise, providing valuable insights into their respective strengths and limitations. The main goal is to identify the aspects that affect accuracy, with a particular emphasis on the effects of noise levels.
+The research questions are: 
+\begin{enumerate}
+    \item What differences exist between denoising autoencoder (DAE) models' performance indicators when it comes to handwritten digit prediction?
+    \item What are the contributing elements to these variations, especially with respect to the hyperparameters?  
+    \item What role do different searches for meta parameters play in maximising the performance of these two neural networks?
+\end{enumerate}
+
+The central research problem 
+revolves around understanding how the DAE and CNN architectures influence MNIST digit 
+classification under varying levels of noise, providing valuable insights into their respective 
+strengths and limitations. The main goal is to identify the aspects that affect accuracy, with 
+a particular emphasis on the effects of noise levels.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aims and objectives}
 \label{sec:intro_aims_obj}
 
+\textbf{Aims:} This study's main goal is determine how well a CNN—which is optimised for image-
+related tasks—can classify handwritten digits in the MNIST dataset when compared to a DAE—which 
+is specifically made for denoising and feature extraction. Also, provide insightful information 
+on the advantages and disadvantages of both architectures on real world noisy images.
+The main objectives of this study include:
+\begin{itemize}
+    \item Gather the MNIST dataset to make it ready for training models.
 
-\textbf{Aims:} This study's main goal is determine how well a CNN—which is optimised for image-related tasks—can classify handwritten digits in the MNIST dataset when compared to a DAE—which is specifically made for denoising and feature extraction. Also, provide insightful information on the advantages and disadvantages of both architectures on real world noisy images.
+    \item Train a convolutional Neural Network (CNN) on the MNIST data, focusing on improving accuracy, precision, recall, F1-score, and understanding confusion between numbers.
 
-\textbf{Objectives:} This study's primary goals are to process data, apply varying level of noise on MNIST Dataset, train the denoising encoder and CNN's and hyper-tune parameters to get the best possible predicted accuracy. We shall assess both image classification models' performance at the conclusion.
+    \item Train a denoising autoencoder (DAE) on the same MNIST data, emphasizing its ability to learn features without labeled information.
 
+    \item Adjust various parameters of both CNN and DAE to get the best performance.
+
+    \item Compare how well CNN and DAE perform after adjusting parameters, understanding which one is better for predicting numbers in the MNIST dataset.
+
+    \item Explore how well both models understand and handle noisy data.
+
+    \item Test the models' ability to work well when there is some noise in the MNIST dataset.
+
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Solution approach}
+The study uses a step-by-step approach, including setting up models, preparing data, splitting the data, adjusting key parameters, and evaluating performance. The research achieves its goals by thoroughly exploring different ways to find the best model hyperparameters.
 \label{sec:intro_sol} % label of Org section
-Briefly describe the solution approach and the methodology applied in solving the set aims and objectives.
+\subsection{Data Description:}
+The MNIST dataset \citep{mnistdataset} is a widely used collection of handwritten digit images commonly employed in the field of machine learning and computer vision.  The dataset consists of digits in the images range from 0 to 9, and each image is labeled with its corresponding digit. This dataset serves as a fundamental benchmark for developing and testing image classification algorithms, particularly those focused on recognizing and classifying handwritten digits. 
+\subsection{Data Preprocessing:}
+Data preprocessing plays a crucial role in optimizing the MNIST dataset for effective deep learning model training. Here are the few steps involved in preparing the MNIST dataset:
 
-Depending on the project, you may like to alter the ``heading'' of this section. Check with you supervisor. Also, check what subsection or any other section that can be added in or removed from this template.
+\subsection{Handling Missing or Noisy Data:}
 
-\subsection{A subsection 1}
-\label{sec:intro_some_sub1}
-You may or may not need subsections here. Depending on your project's needs, add two or more subsection(s). A section takes at least two subsections. 
+Checking for any missing or corrupted data points within the dataset.
+Addressing any noise or outliers that might affect the model's performance.
 
-\subsection{A subsection 2}
-\label{sec:intro_some_sub2}
-Depending on your project's needs, add more section(s) and subsection(s).
+\subsection{Reshaping and Normalization:}
 
-\subsubsection{A subsection 1 of a subsection}
-\label{sec:intro_some_subsub1}
-The command \textbackslash subsubsection\{\} creates a paragraph heading in \LaTeX.
+Reshaping the images to a standard format. For MNIST, this often involves converting 28x28 pixel images into a flattened array of 784 pixels.
+Normalize the pixel values to a range between 0 and 1. This ensures consistent scaling and aids in faster convergence during model training.
 
-\subsubsection{A subsection 2 of a subsection}
-\label{sec:intro_some_subsub2}
-Write your text here...
+\subsection{Model Implementation:}
+\subsubsection{Convolutional Neural Network (CNN) Training:}
+Implementing and training a standard CNN on the labeled MNIST dataset.
+Focused on optimizing key performance metrics: accuracy, precision, recall, F1-score, and confusion matrix.
+
+\subsubsection{Denoising Autoencoder (DAE) Training:}
+Training a competitive Denoising Autoencoder on the same MNIST dataset.
+Leverage DAE's unsupervised learning and feature extraction capabilities.
+
+\subsection{Hyperparameter Tuning:}
+Exploring and fine-tune meta-parameters for both CNN and DAE models.
+Consider a comprehensive range of hyperparameters to maximize predictive performance.
+
+\subsection{Performance Evaluation:}
+Evaluating and compare the performance metrics of CNN and DAE models.
+Assess strengths and limitations, providing insights into model suitability for MNIST digit classification.
+
+\subsection{Interpretability and Noisy Data Handling:}
+Investigate the interpretability of learned representations from both models.
+Assess models' resilience in handling noisy input data.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary of contributions and achievements} %  use this section 
@@ -61,12 +132,4 @@ Write your text here...
 Describe clearly what you have done/created/achieved and what the major results and their implications are. 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Organization of the report} %  use this section
-\label{sec:intro_org} % label of Org section
-Describe the outline of the rest of the report here. Let the reader know what to expect ahead in the report. Describe how you have organized your report. 
-
-\textbf{Example: how to refer a chapter, section, subsection}. This report is organised into seven chapters. Chapter~\ref{ch:lit_rev} details the literature review of this project. In Section~\ref{ch:method}...  % and so on.
-
-\textbf{Note:}  Take care of the word like ``Chapter,'' ``Section,'' ``Figure'' etc. before the \LaTeX command \textbackslash ref\{\}. Otherwise, a  sentence will be confusing. For example, In \ref{ch:lit_rev} literature review is described. In this sentence, the word ``Chapter'' is missing. Therefore, a reader would not know whether 2 is for a Chapter or a Section or a Figure.
 
