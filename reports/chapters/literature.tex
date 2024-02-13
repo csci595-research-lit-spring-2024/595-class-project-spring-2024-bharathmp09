@@ -1,44 +1,14 @@
 \chapter{Literature Review}
 \label{ch:lit_rev} %Label of the chapter lit rev. The key ``ch:lit_rev'' can be used with command \ref{ch:lit_rev} to refer this Chapter.
 
-A literature review chapter can be organized in a few sections with appropriate titles. A literature review chapter might  contain the following:
-\begin{enumerate}
-    \item A review of the state-of-the-art (include theories and solutions) of the field of research.
-    \item A description of the project in the context of existing literature and products/systems.
-    \item An analysis of how the review is relevant to the intended application/system/problem.
-    \item A critique of existing work compared with the intended work.
-\end{enumerate}
-Note that your literature review should demonstrate the significance of the project.
 
-% PLEAE CHANGE THE TITLE of this section
-\section{Example of in-text citation of references in \LaTeX} 
-% Note the use of \cite{} and \citep{}
-The references in a report relate your content with the relevant sources, papers, and the works of others. To include references in a report, we \textit{cite} them in the texts. In MS-Word, EndNote, or MS-Word references, or plain text as a list can be used. Similarly, in \LaTeX, you can use the ``thebibliography'' environment, which is similar to the plain text as a list arrangement like the MS word. However, In \LaTeX, the most convenient way is to use the BibTex, which takes the references in a particular format [see references.bib file of this template] and lists them in style [APA, Harvard, etc.] as we want with the help of proper packages.    
+This section explores the existing existing body of knowledge surrounding the Comparative Analysis of Denoising Autoencoder (DAE) and Convolutional Neural Networks (CNN) for MNIST Classification. Recent advancements in deep machine learning have significantly improved feature learning in image processing tasks, particularly in image classification, making it imperative to explore and understand the capabilities and limitations of different models. Notably, Convolutional Neural Networks (CNNs) have emerged as powerful tools, showcasing superior performance in image classification tasks. However, the inherent challenge of noise in real-world data poses a significant constraint on the performance of deep neural networks, prompting the exploration of denoising techniques. The literature review will examine prior studies focusing on image denoising methods, including traditional approaches and those leveraging deep learning, with a specific emphasis on Denoising Autoencoders. Understanding the existing landscape is crucial for contextualizing the current research and identifying gaps that the Comparative Analysis seeks to address.
 
-These are the examples of how to \textit{cite} external sources, seminal works, and research papers. In \LaTeX, if you use ``\textbf{BibTex}'' you do not have to worry much since the proper use of a bibliographystyle package like ``agsm for the Harvard style'' and little rectification of the content in a BiBText source file [In this template, BibTex are stored in the ``references.bib'' file], we can conveniently generate  a reference style. 
+\section{Review of state-of-the-art}
+The \citep{8078730} explores the application of deep learning, specifically Convolutional Neural Networks (CNNs), in image classification. The authors discuss various models commonly used in deep learning, such as Auto Encoder, sparse coding, Restricted Boltzmann Machine, Deep Belief Networks, and CNNs. They emphasize the effectiveness of CNNs in image classification, particularly showcasing their high performance. The study involves building a simple CNN for image classification, with experiments conducted on benchmark datasets like minist and cifar-10. The authors delve into the fundamental components of CNNs, including Convolutional layers, pooling layers, and fully-connected layers. The study focuses on learning rate strategies and optimization algorithms for solving optimal parameters in image classification. Different strategies are compared, demonstrating the impact on recognition rates during training and testing. 
+The experimental results and 
 
-Take a note of the commands \textbackslash cite\{\} and \textbackslash citep\{\}. The command \textbackslash cite\{\} will write like ``Author et al. (2019)'' style for Harvard, APA and Chicago style. The command \textbackslash citep\{\} will write like ``(Author et al., 2019).'' Depending on how you construct a sentence, you need to use them smartly. Check the examples of \textbf{in-text citation} of sources listed here [This template recommends the \textbf{Harvard style} of referencing.]:
-\begin{itemize}
-    \item \cite{lamport1994latex} has written a comprehensive guide on writing in \LaTeX ~[Example of \textbackslash cite\{\} ].
-    \item If \LaTeX~is used efficiently and effectively, it helps in writing a very high-quality project report~\citep{lamport1994latex} ~[Example of \textbackslash citep\{\} ].   
-    \item A detailed APA, Harvard, and Chicago referencing style guide are available in~\citep{uor_refernce_style}.
-\end{itemize}
-
-\noindent 
-Example of a numbered list:
-\begin{enumerate}
-    \item \cite{lamport1994latex} has written a comprehensive guide on writing in \LaTeX.
-    \item If \LaTeX is used efficiently and effectively, it helps in writing a very high-quality project report~\citep{lamport1994latex}.   
-\end{enumerate}
-
-% PLEAE CHANGE THE TITLE of this section
-\section{Example of ``risk'' of unintentional plagiarism}
-Using other sources, ideas, and material always bring with it a risk of unintentional plagiarism. 
-
-\noindent
-\textbf{\color{red}MUST}: do read the university guidelines on the definition of plagiarism as well as the guidelines on how to avoid plagiarism~\citep{uor_plagiarism}.
-
-
+The \citep{bajaj2020autoencoders} proposes an efficient image denoising technique using autoencoders based on deep learning models. The motivation behind image denoising is to eliminate noise from images, which can be caused by various factors such as defects in camera sensors, transmission in noisy channels, or faulty memory locations in hardware. The proposed model utilizes autoencoders, a type of artificial neural network, for image denoising. Autoencoders learn noise patterns from training images and attempt to eliminate noise from novel images. The proposed network architecture consists of convolutional denoising autoencoder (CDA) blocks, each containing internal layers like convolution, pooling, deconvolution, and upsampling. Skip connections are employed to enhance the model's ability to capture finer image details and facilitate backpropagation during training. The paper discusses related work, highlighting methods such as non-local means, Block Matching and 3D Matching (BM3D), and denoising autoencoders. STL-10 dataset for training and the SET5 standard image dataset for testing. Performance metrics, such as Peak Signal-to-Noise Ratio (PSNR) and Structural Similarity Index (SSIM), are used to evaluate the proposed model's effectiveness in comparison to baseline models. The results show that the proposed model outperforms Convolutional Denoising Deep Neural Network (CDDNN) and Residual Encoder Decoder with 30 layers (RED30) in terms of PSNR, indicating superior denoising capabilities.
 
 
 % A possible section of you chapter
