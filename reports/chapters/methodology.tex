@@ -2,9 +2,27 @@
 % in this template few examples are mention
 \chapter{Methodology}
 \label{ch:method} % Label for method chapter
+\section{Convolutional Neural Networks}
+CNNs are a variant of multi-layered neural networks designed for
+processing two-dimensional data, particularly well-suited for classifying visual patterns like pixel images with minimal pre-processing.
+Feature extraction from observed data occurs at each layer by 
+applying digital filtering techniques, allowing information to propagate through multiple layers.
 
-We mentioned in Chapter~\ref{ch:into} %[example backward reference to a chapter or section.]
-that a project report's structure could follow a particular paradigm. Hence, the organization of a report (effectively the Table of Content of a report) can vary depending on the type of project you are doing. Check which of the given examples suit your project. Alternatively, follow your supervisor's advice.
+THe CNN architecture, introduced by LeCun et al. in 1998, are
+applied to classify images and perceive visual patterns directly
+from pixel images. Information propagation throughout multiple layers
+enables feature extraction using digital filtering techniques.
+CNNs perform two main processes: convolution and subsampling. 
+The convolution involves applying a small-sized kernel over the input
+feature map (IFM) to produce a convolved feature map (CFM). CFMs are
+computed by applying the convolutional operation over the original
+input image using a kernel, which represents weights and biases.
+Weights are shared among positions, preserving spatial locality during
+the convolution process. The subsampling simplifies the feature map 
+gained from convolution by selecting significant features and 
+discarding the rest. Max-pooling, a subsampling method used in 
+experiments, involves taking the maximum value over non-overlapping
+sub-regions.
 
 \section{Examples of the sections of a methodology chapter}
 A general report structure is summarised (suggested) in Table~\ref{tab:gen_template}. Table~\ref{tab:gen_template} describes that, in general, a typical report structure has three main parts: (1) front matter, (2) main text, and (3) end matter. %[\textbf{also notice that the preceding sentence is an example of a numbered list in a text body}]. 
