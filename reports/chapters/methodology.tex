@@ -24,6 +24,12 @@ discarding the rest. Max-pooling, a subsampling method used in
 experiments, involves taking the maximum value over non-overlapping
 sub-regions.
 
+\section{Denoising Auto-Encoder}
+Denoising Autoencoder (DAE) is a specialized type of artificial neural network designed to clean up noisy or corrupted data. It belongs to the family of autoencoders, which are neural networks trained to learn efficient representations of input data. DAEs, in particular, excel in removing noise and capturing essential features from corrupted input.
+
+The encoder is the first part of the DAE. Its role is to transform the input data into a compressed representation. This compressed representation should ideally retain the essential features of the input while filtering out noise.
+One distinctive feature of DAE is the intentional introduction of noise into the input data. This could involve adding random variations or distortions to simulate real-world noise or corruption.The decoder is the second part of the DAE. It takes the compressed representation from the encoder and reconstructs the clean version of the original input data. The decoder's task is to recover the essential features and remove the injected noise.
+
 \section{Examples of the sections of a methodology chapter}
 A general report structure is summarised (suggested) in Table~\ref{tab:gen_template}. Table~\ref{tab:gen_template} describes that, in general, a typical report structure has three main parts: (1) front matter, (2) main text, and (3) end matter. %[\textbf{also notice that the preceding sentence is an example of a numbered list in a text body}]. 
 The structure of the front matter and end matter will remain the same for all the undergraduate final year project report. However, the main text varies as per the project's needs.
