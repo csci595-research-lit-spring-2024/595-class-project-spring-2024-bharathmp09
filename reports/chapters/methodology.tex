@@ -2,295 +2,73 @@
 % in this template few examples are mention
 \chapter{Methodology}
 \label{ch:method} % Label for method chapter
-\section{Convolutional Neural Networks}
-CNNs are a variant of multi-layered neural networks designed for
-processing two-dimensional data, particularly well-suited for classifying visual patterns like pixel images with minimal pre-processing.
-Feature extraction from observed data occurs at each layer by 
-applying digital filtering techniques, allowing information to propagate through multiple layers.
 
-THe CNN architecture, introduced by LeCun et al. in 1998, are
-applied to classify images and perceive visual patterns directly
-from pixel images. Information propagation throughout multiple layers
-enables feature extraction using digital filtering techniques.
-CNNs perform two main processes: convolution and subsampling. 
-The convolution involves applying a small-sized kernel over the input
-feature map (IFM) to produce a convolved feature map (CFM). CFMs are
-computed by applying the convolutional operation over the original
-input image using a kernel, which represents weights and biases.
-Weights are shared among positions, preserving spatial locality during
-the convolution process. The subsampling simplifies the feature map 
-gained from convolution by selecting significant features and 
-discarding the rest. Max-pooling, a subsampling method used in 
-experiments, involves taking the maximum value over non-overlapping
-sub-regions.
+\section{Dataset Overview and Data Exploration}
 
-\section{Denoising Auto-Encoder}
-Denoising Autoencoder (DAE) is a specialized type of artificial neural network designed to clean up noisy or corrupted data. It belongs to the family of autoencoders, which are neural networks trained to learn efficient representations of input data. DAEs, in particular, excel in removing noise and capturing essential features from corrupted input.
+The MNIST dataset serves as a fundamental benchmark in the field of machine learning research, particularly in tasks related to image classification and recognition. This dataset consists of a collection of grayscale images of handwritten digits (0-9), each accompanied by its corresponding label indicating the digit it represents. Researchers widely utilize the MNIST dataset to evaluate the efficacy of various algorithms and techniques for digit recognition tasks.
 
-The encoder is the first part of the DAE. Its role is to transform the input data into a compressed representation. This compressed representation should ideally retain the essential features of the input while filtering out noise.
-One distinctive feature of DAE is the intentional introduction of noise into the input data. This could involve adding random variations or distortions to simulate real-world noise or corruption.The decoder is the second part of the DAE. It takes the compressed representation from the encoder and reconstructs the clean version of the original input data. The decoder's task is to recover the essential features and remove the injected noise.
+The MNIST dataset comprises 70,000 grayscale images, divided into a training set of 60,000 images and a test set of 10,000 images. Each image is a 28x28 pixel square, resulting in a total of 784 pixels per image. These pixels represent the grayscale intensity, ranging from 0 (black) to 255 (white). Additionally, each image is associated with a label, providing ground truth information about the digit depicted in the image.
 
-\section{Examples of the sections of a methodology chapter}
-A general report structure is summarised (suggested) in Table~\ref{tab:gen_template}. Table~\ref{tab:gen_template} describes that, in general, a typical report structure has three main parts: (1) front matter, (2) main text, and (3) end matter. %[\textbf{also notice that the preceding sentence is an example of a numbered list in a text body}]. 
-The structure of the front matter and end matter will remain the same for all the undergraduate final year project report. However, the main text varies as per the project's needs.
-\begin{table}[ht!]
-    \centering
-    \caption{Undergraduate report template structure}
-    \label{tab:gen_template}
-    \begin{tabular}{llll}     
-        \toprule
-        \multirow{7}{3cm}{Frontmatter} 
-        & & Title Page & \\                  
-        & & Abstract &    \\          
-        & & Acknowledgements & \\                            
-        & & Table of Contents &    \\                                
-        & & List of Figures   &    \\                        
-        & & List of Tables    &    \\                
-        & & List of Abbreviations  &    \\                     
-        & &   &    \\                        
-        \multirow{7}{3cm}{Main text}
-        & Chapter 1 & Introduction   &    \\                         
-        & Chapter 2 & Literature Review   &    \\
-        & Chapter 3 & Methodology   &    \\
-        & Chapter 4 & Results    &    \\
-        & Chapter 5 & Discussion and Analysis  &    \\
-        & Chapter 6 & Conclusions and Future Work  &    \\        
-        & Chapter 7 & Refection  &    \\          
-        & &   &    \\                       
-        \multirow{2}{3cm}{End matter}
-        & & References  &    \\   
-        & & Appendices (Optional)  &    \\ 
-        & & Index (Optional)  &    \\ 
-        \bottomrule
-    \end{tabular}
+\begin{table}[htbp]
+\centering
+\caption{Dataset Attributes and Data Types for MNIST Dataset}
+\label{tab:mnist_attributes}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Attribute} & \textbf{Description}            & \textbf{Data Type} \\ \midrule
+Image              & Handwritten digit image        & Image (28x28 pixels, grayscale) \\
+Label              & Digit label                    & Integer (0 to 9) \\ 
+\bottomrule
+\end{tabular}
 \end{table}
 
-\subsection{Example of a software/Web development main text structure}
-\label{subsec:se_chpters}
-Notice that the ``methodology'' Chapter of Software/Web development in Table~\ref{tab:soft_eng_temp} takes a standard software engineering paradigm (approach). Alternatively, these suggested sections can be the chapters of their own. Also, notice that ``Chapter 5'' in Table~\ref{tab:soft_eng_temp} is ``Testing and Validation'' which is different from the general report template mentioned in Table~\ref{tab:gen_template}. Check with your supervisor if in doubt.
-\begin{table}[ht!]
-    \centering
-    \caption{Example of a software engineering-type report structure}
-    \label{tab:soft_eng_temp}
-    \begin{tabular}{lll}     
-        \toprule                   
-        Chapter 1 & Introduction   &    \\        
-        Chapter 2 & Literature Review  &    \\                   
-        Chapter 3 & Methodology   &    \\
-        &               & Requirements specifications   \\
-        &               & Analysis   \\
-        &               & Design   \\
-        &               & Implementations   \\
-        Chapter 4 & Testing and Validation  &    \\
-        Chapter 5 & Results and Discussion      &    \\
-        Chapter 6 & Conclusions and Future Work  &    \\        
-        Chapter 7 & Reflection  &    \\                          
-        \bottomrule
-    \end{tabular}
-\end{table}
+\subsection{Loading the Dataset} 
 
-\subsection{Example of an algorithm analysis main text structure}
-Some project might involve the implementation of a state-of-the-art algorithm and its performance analysis and comparison with other algorithms. In that case, the suggestion in Table~\ref{tab:algo_temp} may suit you the best. 
-\begin{table}[ht!]
-    \centering
-    \caption{Example of an algorithm analysis type report structure}
-    \label{tab:algo_temp}
-    \begin{tabular}{lll}     
-        \toprule                   
-        Chapter 1 & Introduction  &    \\        
-        Chapter 2 & Literature Review  &    \\                
-        Chapter 3 & Methodology   &    \\
-        &               & Algorithms descriptions  \\
-        &               & Implementations   \\
-        &               & Experiments design   \\
-        Chapter 4 & Results       &  \\
-        Chapter 5 & Discussion and Analysis  &    \\
-        Chapter 6 & Conclusion and Future Work  &    \\        
-        Chapter 7 & Reflection  &    \\          
-        \bottomrule
-    \end{tabular}
-\end{table}
+The MNIST dataset will be retrieved from reputable sources, such as TensorFlow or PyTorch libraries, ensuring data integrity and consistency. Both the training and testing datasets will be loaded into the research environment for further exploration.
 
-\subsection{Example of an application type main text structure}
-If you are applying some algorithms/tools/technologies on some problems/datasets/etc., you may use the methodology section prescribed in Table~\ref{tab:app_temp}.  
-\begin{table}[ht!]
-    \centering
-    \caption{Example of an application type report structure}
-    \label{tab:app_temp}
-    \begin{tabular}{lll}     
-        \toprule                   
-        Chapter 1 & Introduction  &    \\        
-        Chapter 2 & Literature Review  &    \\                
-        Chapter 3 & Methodology   &    \\
-        &               & Problems (tasks) descriptions  \\
-        &               & Algorithms/tools/technologies/etc. descriptions  \\        
-        &               & Implementations   \\
-        &               & Experiments design and setup   \\
-        Chapter 4 & Results       &  \\
-        Chapter 5 & Discussion and Analysis  &    \\
-        Chapter 6 & Conclusion and Future Work  &    \\        
-        Chapter 7 & Reflection  &    \\          
-        \bottomrule
-    \end{tabular}
-\end{table}
+\subsection{Visualizing Sample Images}
 
-\subsection{Example of a science lab-type main text structure}
-If you are doing a science lab experiment type of project, you may use the  methodology section suggested in Table~\ref{tab:lab_temp}. In this kind of project, you may refer to the ``Methodology'' section as ``Materials and Methods.''
-\begin{table}[ht!]
-    \centering
-    \caption{Example of a science lab experiment-type report structure}
-    \label{tab:lab_temp}
-    \begin{tabular}{lll}     
-        \toprule                   
-        Chapter 1 & Introduction  &    \\        
-        Chapter 2 & Literature Review  &    \\                
-        Chapter 3 & Materials and Methods   &    \\
-        &               & Problems (tasks) description  \\
-        &               & Materials \\        
-        &               & Procedures  \\                
-        &               & Implementations   \\
-        &               & Experiment set-up   \\
-        Chapter 4 & Results       &  \\
-        Chapter 5 & Discussion and Analysis  &    \\
-        Chapter 6 & Conclusion and Future Work  &    \\        
-        Chapter 7 & Reflection  &    \\          
-        \bottomrule
-    \end{tabular}
-\end{table}
+A random selection of sample images from the dataset will be visualized to gain insights into the characteristics of handwritten digits. These images will be displayed alongside their corresponding labels, facilitating an understanding of the dataset's content.
 
-\section{Example of an Equation in \LaTeX}
-Eq.~\ref{eq:eq_example} [note that this is an example of an equation's in-text citation] is an example of an equation in \LaTeX. In Eq.~\eqref{eq:eq_example}, $ s $ is the mean of elements $ x_i \in \mathbf{x} $: 
-
-\begin{equation}
-\label{eq:eq_example} % label used to refer the eq in text
-s = \frac{1}{N} \sum_{i = 1}^{N} x_i. 
-\end{equation}
-
-Have you noticed that all the variables of the equation are defined using the \textbf{in-text} maths command \$.\$, and Eq.~\eqref{eq:eq_example} is treated as a part of the sentence with proper punctuation? Always treat an equation or expression as a part of the sentence. 
-
-\section{Example of a Figure in \LaTeX}
-Figure~\ref{fig:chart_a} is an example of a figure in \LaTeX. For more details, check the link:
-
-\href{https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}{wikibooks.org/wiki/LaTeX/Floats,\_Figures\_and\_Captions}.
-
-\noindent
-Keep your artwork (graphics, figures, illustrations) clean and readable. At least 300dpi is a good resolution of a PNG format artwork. However, an SVG format artwork saved as a PDF will produce the best quality graphics. There are numerous tools out there that can produce vector graphics and let you save that as an SVG file and/or as a PDF file. One example of such a tool is the ``Flow algorithm software''. Here is the link for that: \href{http://www.flowgorithm.org/download/}{flowgorithm.org}.
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.3]{figures/chart.pdf}
-    \caption{Example figure in \LaTeX.}
-    \label{fig:chart_a}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\textwidth]{figures/mnist_images.png}
+  \caption{MNIST Example Images}
+  \label{fig:mnist_image}
 \end{figure}
 
-\clearpage %  use command \clearpage when you want section or text to appear in the next page.
+\subsection{Exploring Label Distribution}
 
-\section{Example of an algorithm in \LaTeX}
-Algorithm~\ref{algo:algo_example} is a good example of an algorithm in \LaTeX.  
-\begin{algorithm}
-    \caption{Example caption: sum of all even numbers}
-    \label{algo:algo_example}
-    \begin{algorithmic}[1]
-        \Require{$ \mathbf{x}  = x_1, x_2, \ldots, x_N$}
-        \Ensure{$EvenSum$ (Sum of even numbers in $ \mathbf{x} $)}
-        \Statex
-        \Function{EvenSummation}{$\mathbf{x}$}
-        \State {$EvenSum$ $\gets$ {$0$}}
-        \State {$N$ $\gets$ {$length(\mathbf{x})$}}
-        \For{$i \gets 1$ to $N$}                    
-        \If{$ x_i\mod 2 == 0$}  \Comment check if a number is even?
-        \State {$EvenSum$ $\gets$ {$EvenSum + x_i$}}
-        \EndIf
-        \EndFor
-        \State \Return {$EvenSum$}
-        \EndFunction
-    \end{algorithmic}
-\end{algorithm}
- 
-\section{Example of code snippet  in \LaTeX}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/data_distribution.png}
+  \caption{Distribution of Classes in MNIST Dataset}
+  \label{fig:data_distribution}
+\end{figure}
 
-Code Listing~\ref{list:python_code_ex} is a good example of including a code snippet in a report. While using code snippets, take care of the following:
-\begin{itemize}
-    \item do not paste your entire code (implementation) or everything you have coded. Add code snippets only. 
-    \item The algorithm shown in Algorithm~\ref{algo:algo_example} is usually preferred over code snippets in a technical/scientific report. 
-    \item Make sure the entire code snippet or algorithm stays on a single page and does not overflow to another page(s).  
-\end{itemize}
+A histogram is plotted to visualize the distribution of digit labels within the training set. It is imperative to ensure that the dataset exhibits balanced label distributions, with a similar number of samples for each digit class.
 
-Here are three examples of code snippets for three different languages (Python, Java, and CPP) illustrated in Listings~\ref{list:python_code_ex}, \ref{list:java_code_ex}, and \ref{list:cpp_code_ex} respectively.  
+\section{Data Preprocessing}
 
-\begin{lstlisting}[language=Python, caption={Code snippet in \LaTeX ~and  this is a Python code example}, label=list:python_code_ex]
-import numpy as np
+\subsection{Flatten the image data}
 
-x  = [0, 1, 2, 3, 4, 5] # assign values to an array
-evenSum = evenSummation(x) # call a function
+In the MNIST dataset, each image represents a handwritten digit and is initially structured as a 2-dimensional array (28x28 pixels). However, most machine learning algorithms, including neural networks, require input data to be in a flat, one-dimensional format. Flattening the image data involves reshaping each image into a single vector by stacking the rows of pixels one after another. This transformation simplifies the representation of the image data and allows us to treat each pixel as a separate feature. Flattening the data ensures compatibility with various machine learning models and facilitates efficient computation during training and prediction processes.
 
-def evenSummation(x):
-    evenSum = 0
-    n = len(x)
-    for i in range(n):
-        if np.mod(x[i],2) == 0: # check if a number is even?
-            evenSum = evenSum + x[i]
-    return evenSum
-\end{lstlisting}
+\subsection{Normalize the pixel values:}
 
-Here we used  the ``\textbackslash clearpage'' command and forced-out the second listing example onto the next page. 
-\clearpage  %
-\begin{lstlisting}[language=Java, caption={Code snippet in \LaTeX ~and  this is a Java code example}, label=list:java_code_ex]
-public class EvenSum{ 
-    public static int evenSummation(int[] x){
-        int evenSum = 0;
-        int n = x.length;
-        for(int i = 0; i < n; i++){
-            if(x[i]%2 == 0){ // check if a number is even?
-                evenSum = evenSum + x[i];
-            }
-        }
-        return evenSum;     
-    }
-    public static void main(String[] args){ 
-        int[] x  = {0, 1, 2, 3, 4, 5}; // assign values to an array
-        int evenSum = evenSummation(x);
-        System.out.println(evenSum);
-    } 
-} 
-\end{lstlisting}
+The pixel values in the MNIST dataset represent the intensity of grayscale pixels ranging from 0 to 255. Normalizing the pixel values involves scaling them to a standard range, typically between 0 and 1 or -1 and 1. Normalization helps in stabilizing and speeding up the training process of machine learning models. It prevents certain features from dominating others due to differences in scale, thereby improving the convergence of optimization algorithms. Moreover, normalization ensures that the model's performance is not sensitive to the absolute values of the input features, making it more robust and generalizable across different datasets.
+
+\subsection{Split the dataset into training and testing sets:}
+
+Splitting the dataset into training and testing sets is crucial for evaluating the performance of machine learning models. The training set is used to train the model, while the testing set is used to evaluate its performance on unseen data. Additionally, it is common practice to further split the training set into a training subset and a validation set. The training subset is used for actual model training, while the validation set is used to tune hyperparameters and monitor the model's performance during training. This split helps prevent overfitting by providing an independent dataset for model evaluation and parameter tuning. Overall, splitting the dataset ensures that the model's performance estimates are reliable and generalizable to unseen data.
 
 
-\begin{lstlisting}[language=C, caption={Code snippet in \LaTeX ~and  this is a C/C++ code example}, label=list:cpp_code_ex]
-int evenSummation(int x[]){
-    int evenSum = 0;
-    int n = sizeof(x);
-    for(int i = 0; i < n; i++){
-        if(x[i]%2 == 0){ // check if a number is even?
-            evenSum = evenSum + x[i];
-    	}
-    }
-    return evenSum;     
-}
+\subsection{Adding Noise to MNIST Images}
 
-int main(){
-    int x[]  = {0, 1, 2, 3, 4, 5}; // assign values to an array
-    int evenSum = evenSummation(x);
-    cout<<evenSum;
-    return 0;
-}
-\end{lstlisting}
+The add noise function provides a convenient way to induce varied levels of Gaussian noise into the MNIST dataset. This function takes two parameters: images, which represents the array of MNIST images, and noise level, which specifies the variance of the Gaussian noise to be added. The higher the noise level, the more intense the noise added to the images.
 
+Internally, the function generates Gaussian noise with the specified variance and adds it to the input images. It ensures that the pixel values remain within the valid range of [0, 255] by clipping the values after adding noise.
+By incorporating this function into the preprocessing pipeline, we can create augmented versions of the MNIST dataset with different levels of noise. These augmented datasets can help improve the model's performance, especially in scenarios where the input data may exhibit variability or uncertainty.
 
-
-\section{Example of in-text citation style}
-\subsection{Example of the equations and illustrations placement and reference in the text}
-Make sure whenever you refer to the equations, tables, figures, algorithms,  and listings for the first time, they also appear (placed) somewhere on the same page or in the following page(s). Always make sure to refer to the equations, tables and figures used in the report. Do not leave them without an \textbf{in-text citation}. You can refer to equations, tables and figures more them once.
-
-\subsection{Example of the equations and illustrations style}
-Write \textbf{Eq.} with an uppercase ``Eq`` for an equation before using an equation number with (\textbackslash eqref\{.\}). Use ``Table'' to refer to a table, ``Figure'' to refer to a figure, ``Algorithm'' to refer to an algorithm and ``Listing'' to refer to listings (code snippets). Note that, we do not use the articles ``a,'' ``an,'' and ``the'' before the words Eq., Figure, Table, and Listing, but you may use an article for referring the words figure, table, etc. in general.
-
-For example, the sentence ``A report structure is shown in \textbf{the} Table~\ref{tab:gen_template}'' should be written as ``A report structure is shown \textbf{in} Table~\ref{tab:gen_template}.'' 
- 
-
-\section{Summary}
-Write a summary of this chapter.
-
-~\\[5em]
-\noindent
-{\huge\textbf{Note:}} In the case of \textbf{software engineering} project a Chapter ``\textbf{Testing and Validation}'' should precede the ``Results'' chapter. See Section~\ref{subsec:se_chpters} for report organization of such project. 
+\section{Model Implementation}
 

@@ -10,6 +10,33 @@ The experimental results and
 
 The \citep{bajaj2020autoencoders} proposes an efficient image denoising technique using autoencoders based on deep learning models. The motivation behind image denoising is to eliminate noise from images, which can be caused by various factors such as defects in camera sensors, transmission in noisy channels, or faulty memory locations in hardware. The proposed model utilizes autoencoders, a type of artificial neural network, for image denoising. Autoencoders learn noise patterns from training images and attempt to eliminate noise from novel images. The proposed network architecture consists of convolutional denoising autoencoder (CDA) blocks, each containing internal layers like convolution, pooling, deconvolution, and upsampling. Skip connections are employed to enhance the model's ability to capture finer image details and facilitate backpropagation during training. The paper discusses related work, highlighting methods such as non-local means, Block Matching and 3D Matching (BM3D), and denoising autoencoders. STL-10 dataset for training and the SET5 standard image dataset for testing. Performance metrics, such as Peak Signal-to-Noise Ratio (PSNR) and Structural Similarity Index (SSIM), are used to evaluate the proposed model's effectiveness in comparison to baseline models. The results show that the proposed model outperforms Convolutional Denoising Deep Neural Network (CDDNN) and Residual Encoder Decoder with 30 layers (RED30) in terms of PSNR, indicating superior denoising capabilities.
 
+\section{Convolutional Neural Networks}
+CNNs are a variant of multi-layered neural networks designed for
+processing two-dimensional data, particularly well-suited for classifying visual patterns like pixel images with minimal pre-processing.
+Feature extraction from observed data occurs at each layer by 
+applying digital filtering techniques, allowing information to propagate through multiple layers.
+
+THe CNN architecture, introduced by LeCun et al. in 1998, are
+applied to classify images and perceive visual patterns directly
+from pixel images. Information propagation throughout multiple layers
+enables feature extraction using digital filtering techniques.
+CNNs perform two main processes: convolution and subsampling. 
+The convolution involves applying a small-sized kernel over the input
+feature map (IFM) to produce a convolved feature map (CFM). CFMs are
+computed by applying the convolutional operation over the original
+input image using a kernel, which represents weights and biases.
+Weights are shared among positions, preserving spatial locality during
+the convolution process. The subsampling simplifies the feature map 
+gained from convolution by selecting significant features and 
+discarding the rest. Max-pooling, a subsampling method used in 
+experiments, involves taking the maximum value over non-overlapping
+sub-regions.
+
+\section{Denoising Auto-Encoder}
+Denoising Autoencoder (DAE) is a specialized type of artificial neural network designed to clean up noisy or corrupted data. It belongs to the family of autoencoders, which are neural networks trained to learn efficient representations of input data. DAEs, in particular, excel in removing noise and capturing essential features from corrupted input.
+
+The encoder is the first part of the DAE. Its role is to transform the input data into a compressed representation. This compressed representation should ideally retain the essential features of the input while filtering out noise.
+One distinctive feature of DAE is the intentional introduction of noise into the input data. This could involve adding random variations or distortions to simulate real-world noise or corruption.The decoder is the second part of the DAE. It takes the compressed representation from the encoder and reconstructs the clean version of the original input data. The decoder's task is to recover the essential features and remove the injected noise.
 
 % A possible section of you chapter
 \section{Critique of the review} % Use this section title or choose a betterone
