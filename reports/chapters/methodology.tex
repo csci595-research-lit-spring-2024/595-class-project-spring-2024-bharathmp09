@@ -71,4 +71,81 @@ Internally, the function generates Gaussian noise with the specified variance an
 By incorporating this function into the preprocessing pipeline, we can create augmented versions of the MNIST dataset with different levels of noise. These augmented datasets can help improve the model's performance, especially in scenarios where the input data may exhibit variability or uncertainty.
 
 \section{Model Implementation}
+This is the critical step where we build the model to predict handwritten digits.
 
+\subsection{Convolutional Neural Network}
+
+It is used for accurately classifying handwritten digits in the MNIST dataset due to their ability to effectively capture spatial patterns within images.
+
+\begin{algorithm}
+    \caption{Handwritten Digit Classification using Convolutional Neural Networks}
+    \begin{algorithmic}[1]
+        \Require Images $X$ and corresponding labels $y$ for training data
+        \Ensure Performance metrics including accuracy, confusion matrix, precision, recall, and F1-score
+        \State Create a convolutional neural network model with default architecture
+        \State Train the model using the training data (images $X$ and labels $y$)
+        \State Evaluate the model's performance metrics such as accuracy, confusion matrix, precision, recall, and F1-score
+        \State Predict the labels for the testing data using the trained model
+        \State Assess the model's performance on the testing data
+        \State Calculate the performance metrics including accuracy, confusion matrix, precision, recall, and F1-score.
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Handwritten Digit Classification using Denoising Auto-encoder}
+
+It is employed for enhancing the robustness of feature extraction in MNIST dataset classification tasks by reconstructing clean images from noisy inputs.
+
+
+\begin{algorithm}
+    \caption{Denoising Autoencoder}
+        \begin{algorithmic}[1]
+            \Require Noisy images $X_{\text{noisy}}$ and clean images $X_{\text{clean}}$ for training data
+            \Ensure Reconstructed clean images from noisy inputs
+            \State Create a denoising autoencoder model with encoder and decoder architecture
+            \State Train the denoising autoencoder using the noisy images $X_{\text{noisy}}$ and their corresponding clean images $X_{\text{clean}}$
+            \State Evaluate the performance of the denoising autoencoder by measuring reconstruction error
+            \State Use the trained denoising autoencoder to reconstruct clean images from noisy inputs
+        \end{algorithmic}
+\end{algorithm}
+
+\subsection{Hyperparameter Tuning with GridSearchCV}
+Hyperparameter tuning is a critical step in optimizing the performance of Convolutional Neural Networks (CNN) and Denoising Autoencoders (DAE). By fine-tuning hyperparameters, we aim to identify the optimal configuration that maximizes the performance metrics of these models. One popular approach for hyperparameter tuning is GridSearchCV, which systematically explores a predefined grid of hyperparameter values to find the best combination for the given problem.
+
+\subsubsection{Grid Search}
+Grid Search involves specifying a set of hyperparameter values for each hyperparameter of the model. These values form a grid, and the model is trained and evaluated for each combination of hyperparameter values. The performance of the model is then assessed using cross-validation, typically employing techniques such as k-fold cross-validation.By leveraging GridSearchCV, we can effectively fine-tune the hyperparameters of CNNs and DAEs, optimizing their performance for tasks such as image classification and denoising. This systematic approach helps us identify the most suitable hyperparameter values, ultimately leading to improved model performance and generalization.
+
+\subsubsection{Hyperparameter Tuning for CNN}
+Hyperparameter tuning for Convolutional Neural Networks (CNNs) is a critical step in optimizing their performance for image classification tasks. GridSearchCV is a popular technique used for this purpose. It involves systematically exploring a predefined grid of hyperparameters and selecting the combination that yields the best performance on a validation set. This process helps identify the optimal values for hyperparameters such as learning rate, batch size, number of filters, kernel size, and dropout rate, ultimately leading to improved accuracy and generalization of the CNN model.
+ 
+\begin{algorithm}
+    \caption{Hyperparameter Tuning for CNN using GridSearchCV}
+    \begin{algorithmic}[1]
+        \Require CNN model architecture, hyperparameter grid
+        \Ensure Optimized hyperparameters for the CNN model
+        \State Define a grid of hyperparameters to be tuned
+        \State Initialize GridSearchCV with the CNN model and hyperparameter grid
+        \State Perform grid search with cross-validation to evaluate each hyperparameter combination
+        \State Identify the optimal hyperparameters based on the chosen performance metric (e.g., accuracy)
+        \State Train the CNN model using the optimal hyperparameters
+        \State \textbf{return} Optimized hyperparameters for the CNN model
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Hyperparameter Tuning for DAE}
+Hyperparameter tuning for Denoising Autoencoders (DAEs) using GridSearchCV is crucial for enhancing their performance in tasks such as image denoising and feature extraction. GridSearchCV systematically explores a predefined grid of hyperparameters, including parameters like learning rate, batch size, number of layers, activation functions, and regularization techniques. By evaluating different combinations of these hyperparameters through cross-validation, GridSearchCV helps identify the optimal configuration that maximizes the denoising performance of the DAE. This process ensures that the DAE model is fine-tuned to achieve better denoising results and robustness to noise in input data.
+
+\begin{algorithm}
+    \caption{Hyperparameter Tuning for Denoising Autoencoder using GridSerachCV}
+    \begin{algorithmic}[1]
+        \Require Noisy MNIST images $\mathbf{X}$, clean MNIST images $\mathbf{Y}$
+        \Ensure Trained denoising autoencoder model $\mathcal{M}$
+        \State Define the architecture of the denoising autoencoder model $\mathcal{M}$, including encoder and decoder layers
+        \State Compile the denoising autoencoder model $\mathcal{M}$ with appropriate loss function and optimizer
+        \State Generate noisy images $\tilde{\mathbf{X}}$ by adding random noise to the clean images $\mathbf{Y}$
+        \State Train the denoising autoencoder model $\mathcal{M}$ using the noisy images $\tilde{\mathbf{X}}$ and the corresponding clean images $\mathbf{Y}$
+        \State \textbf{return} Trained denoising autoencoder model $\mathcal{M}$
+    \end{algorithmic}
+\end{algorithm}
+
+\section{Summary}
+The methodology section outlines the research approach, beginning with an overview of the MNIST dataset and exploratory data analysis. It covers data preprocessing steps like flattening and normalizing image data, along with splitting the dataset. Model implementation details for Convolutional Neural Networks (CNNs) and Denoising Autoencoders (DAEs) are provided, emphasizing their roles in digit classification and image denoising, respectively. Additionally, the section discusses hyperparameter tuning using GridSearchCV to optimize model performance. Overall, it serves as a roadmap for conducting the research, detailing the steps involved in data preparation, model implementation, and hyperparameter optimization for accurate classification and denoising of MNIST handwritten digits.
