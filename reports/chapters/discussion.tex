@@ -1,21 +1,31 @@
 \chapter{Discussion and Analysis}
 \label{ch:evaluation}
 
-Depending on the type of project you are doing, this chapter can be merged with ``Results'' Chapter as `` Results and Discussion'' as suggested by your supervisor. 
+\section{Discussion on performance on noise levels}
+The performance of the Convolutional Neural Network (CNN) and the Denoising Autoencoder (DAE) across various Gaussian noise intensities reveals important insights into their operational resilience and constraints. The CNN showed commendable performance in maintaining high accuracy levels until a moderate noise intensity (0.5), beyond which a significant drop in accuracy was observed. This indicates that CNNs, with appropriate training, can efficiently process data in environments with considerable noise, which is essential for applications such as real-time surveillance or autonomous vehicle navigation.
 
-In the case of software development and the standalone applications, describe the significance of the obtained results/performance of the system. 
-
-
-
-\section{A section}% please use an appropriate section title
-Discussion and analysis chapter evaluates and analyses the results. It interprets the obtained results. 
-
-
+On the other hand, the DAE demonstrated excellent initial performance in reducing noise at lower levels, as evidenced by low reconstruction MSE scores. However, as the noise intensity escalated, the effectiveness of the DAE diminished markedly, highlighted by rising MSE values. This decline might reflect the model's limitations in adapting to more complex or intense noise patterns, or a saturation in its data modeling capabilities.
 
 \section{Significance of the findings}
-In this chapter, you should also try to discuss the significance of the results and key findings, in order to enhance the reader's understanding of the investigated problem
+The significance of these findings is underscored by demonstrating how various neural network architectures navigate the challenge of environmental noise, a prevalent issue in processing real-world data. Notably, the CNN's ability to sustain high accuracy up to moderate noise levels illustrates its suitability for critical applications such as autonomous vehicle navigation, where real-time image processing is essential and environmental conditions are unpredictable. This resilience suggests that CNNs could serve as a cornerstone technology for systems that demand consistent reliability across diverse sensory inputs.
 
-\section{Limitations} % please discuss limitation of the project 
-Discuss the key limitations and potential implications or improvements of the findings.
+For the Denoising Autoencoder (DAE), the notable reduction in reconstruction errors at lower noise intensities confirms its utility in enhancing image quality, critical for tasks such as digital photo restoration or improving the clarity of medical images, where precision is vital for accurate diagnosis. Additionally, the DAE’s ability to improve image quality before further analytical processing can lead to more precise outcomes in subsequent image-processing tasks like object detection or classification.
+
+\section{Limitations} 
+Despite the promising results, several limitations must be acknowledged, which could impact the generalizability and scalability of the findings:
+
+
+\begin{itemize}
+    \item Noise Diversity: The study's focus on Gaussian noise does not fully encapsulate the complexity of real-world scenarios, which often involve a variety of noise types including Poisson, speckle, and motion blur. This limitation underscores the need to test these models against a broader spectrum of noise conditions to ensure their robustness across different environments.
+
+    \item Model Scalability: The increasing reconstruction MSE observed in the DAE as noise levels rise suggests potential scalability issues under extreme noisy conditions. This could limit the DAE's applicability in environments where noise is not only high but also diverse in nature, potentially impacting the model’s effectiveness in broader applications.
+
+    \item Overfitting Concerns: The CNN's consistent performance up to a certain noise threshold might mask underlying overfitting issues, where the model is potentially tuned to specific noise characteristics rather than capturing more generalized patterns. Such overfitting could undermine the model’s performance in new or varied operational settings where noise characteristics differ from the training data.
+
+    \item Computational Efficiency: Both CNNs and DAEs, especially as the models increase in complexity to handle higher levels of noise, place significant demands on computational resources. This could pose challenges in deploying these models in resource-constrained environments, potentially limiting their usability in real-time applications or on edge devices.
+
+\end{itemize}
+
+
 \section{Summary}
-Write a summary of this chapter.
+The analysis of Convolutional Neural Networks (CNNs) and Denoising Autoencoders (DAEs) under varying levels of Gaussian noise revealed their respective strengths and limitations in noisy environments. CNNs maintained robust performance up to moderate noise levels, indicating their practical utility, but showed a performance drop at higher noise intensities. DAEs effectively reduced noise at lower levels but struggled with higher noise, pointing to scalability issues. Both models faced challenges including overfitting and computational efficiency, emphasizing the need for further research to enhance their adaptability and efficiency in diverse real-world settings.
