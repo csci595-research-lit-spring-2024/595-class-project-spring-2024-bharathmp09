@@ -1,17 +1,30 @@
 \chapter{Conclusions and Future Work}
 \label{ch:con}
-\section{Conclusions}
-Typically a conclusions chapter first summarizes the investigated problem and its aims and objectives. It summaries the critical/significant/major findings/results about the aims and objectives that have been obtained by applying the key methods/implementations/experiment set-ups. A conclusions chapter draws a picture/outline of your project's central and the most signification contributions and achievements. 
+\section{Conclusion}
+This investigation into the capabilities of Denoising Autoencoders (DAEs) and Convolutional Neural Networks (CNNs) within the scope of MNIST digit classification has yielded illuminating insights. CNNs have proven resilient, upholding accuracy in the face of noise, making them invaluable for real-world applications where data corruption is inevitable. DAEs have been successful in their primary role of image denoising at lower noise levels, asserting their importance in the initial stages of image analysis workflows. Nevertheless, the study has also highlighted critical limitations, such as the DAE’s performance downturn at high noise levels and the CNN’s vulnerability to overfitting, which may hinder performance in variable noise environments.
 
-A good conclusions summary could be approximately 300--500 words long, but this is just a recommendation.
+\section{Future Directions for Research}
 
-A conclusions chapter followed by an abstract is the last things you write in your project report.
+After completing this project, i have identified several key areas that future research can expand upon, based on our experiences and the project's untapped potential:
 
-\section{Future work}
-This section should refer to Chapter~\ref{ch:results} where the author has reflected their criticality about their own solution. The future work is then sensibly proposed in this section.
+\begin{itemize}[label=$\bullet$]
+    \item Testing with Different Noises: Our work primarily dealt with Gaussian noise, but there's a whole range of noises in real life that we haven't yet explored. Future projects could look at these other noises, like the random noise from camera sensors, to make our findings more useful for everyday situations.
 
-\textbf{Guidance on writing future work:} While working on a project, you gain experience and learn the potential of your project and its future works. Discuss the future work of the project in technical terms. This has to be based on what has not been yet achieved in comparison to what you had initially planned and what you have learned from the project. Describe to a reader what future work(s) can be started from the things you have completed. This includes identifying what has not been achieved and what could be achieved. 
+    \item Improving the Models: While our DAEs and CNNs did a good job, they struggled with lots of noise. We could try out new types of networks that might do better in these tough conditions, or we could combine features from different models to create something even stronger.
 
+    \item New Ways to Prevent Overfitting: We used some standard tricks to stop our CNNs from overfitting, but we think there could be better methods out there. Maybe we can take inspiration from how the human brain avoids overfitting to improve our models.
 
+    \item Making Models Faster and Smaller: Our models are pretty big and slow, which could be a problem for using them on phones or other small devices. Future research could work on making the models more compact without losing their accuracy.
 
-A good future work summary could be approximately 300--500 words long, but this is just a recommendation.
+    \item Trying the Models in New Areas: We'd love to see how our models perform in different fields like medical imaging or factory quality control, where it's really important to get accurate results even when the images aren't perfect.
+
+    \item Learning from Other Fields: There might be things we can learn from areas like psychology or neuroscience about how to handle noisy data better. By bringing in knowledge from these fields, we could create smarter and more efficient models.
+
+    \item Adjusting to Noise on the Fly: Right now, our models don't do well if the noise in the images changes unexpectedly. We hope future projects will create models that can adjust themselves as the noise changes, keeping their performance up without needing help.
+
+    \item Teaching Models to Keep Learning: Our models learn from the noise once and then stop. It would be great if we could teach them to keep learning over time so they can get better at dealing with noise the more they're exposed to it.
+
+    \item Quickly Adapting to New Noises: Sometimes, models need to learn new types of noise fast. Research into meta-learning, which is about learning how to learn, could help our models pick up new noises quickly, which is especially handy when dealing with new or evolving types of data.
+\end{itemize}
+
+In short, I have learned a lot from this project, but there's still a lot I have not covered. Future research can pick up where I left off, helping to make our findings more applicable to the real world and improving the technology I have developed.

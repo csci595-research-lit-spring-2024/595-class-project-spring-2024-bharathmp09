@@ -70,7 +70,7 @@ The performance of a Denoising Autoencoder (DAE) when exposed to varying levels 
   \end{minipage}
 \end{figure}
 
-\vspace*{1.5in}
+\vspace*{1.2in}
 
 \begin{table}[ht]
 \centering
@@ -92,11 +92,22 @@ The performance of a Denoising Autoencoder (DAE) when exposed to varying levels 
 \caption{Performance of Denoising Autoencoder (DAE) at Different Noise Levels}
 \end{table}
 
-\vspace*{1.5in}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/reconstructed_images.png}
+  \caption{DAE Image Reconstruction on various noise levels}
+  \label{fig:dae_imgreconst}
+\end{figure}
+
+\subsubsection{Image Reconstruction using DAE}
+The image showcases a Denoising Autoencoder's (DAE) performance in cleaning digit images across a spectrum of Gaussian noise intensities. The format is arranged in a descending order of noise levels, with original images at the top, followed by noisy versions, and concluding with the DAE's reconstructed outputs at the bottom of each set. At lower noise levels, the DAE effectively restores the digits to a state closely resembling the originals. However, as noise intensifies, the quality of reconstruction degrades, revealing the DAE's decreasing ability to accurately denoise the images, especially when the noise reaches the highest levels. This visual demonstration effectively highlights the DAE's strengths in mitigating noise and its challenges in handling extreme noise conditions.
+
+
+
+As shown in \ref{tab:dae_classifier_accuracy}  table presents the classification test accuracy of a Denoising Autoencoder (DAE) classifier at various noise levels, illustrating how the DAE's performance is affected as the noise level increases. Initially, at low noise levels (0.05 to 0.30), the DAE maintains high accuracy, slightly fluctuating but staying above 95\%. This indicates the DAE's strong capability to accurately classify images with minimal to moderate noise. However, as the noise level rises to 0.50 and beyond, there is a clear downward trend in accuracy, with a notable drop to 85.47\% at a noise level of 0.75. These figures underscore the challenge that higher noise levels pose to the DAE's classification ability, highlighting a decrease in performance as the noise approaches higher intensities.
 
 \begin{table}[ht]
 \centering
-\label{tab:dae_classifier_accuracy}
 \begin{tabular}{c|c}
 \toprule
 \textbf{Noise Level} & \textbf{Accuracy (\%)} \\
@@ -112,6 +123,7 @@ The performance of a Denoising Autoencoder (DAE) when exposed to varying levels 
 \bottomrule
 \end{tabular}
 \caption{Classification Test Accuracy of DAE Classifier at Various Noise Levels}
+\label{tab:dae_classifier_accuracy}
 \end{table}
 
 \section{Summary}
